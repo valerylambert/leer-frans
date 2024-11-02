@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+ <link href="./css/stylesheet.css" rel="stylesheet">
+ <script>
+ var ex1 = ["ai","as","a","avons","avez","ont","suis","es","est","sommes","êtes","sont"];
+ var tab= [];
+ var suffixe1="_q";
+ var suffixe_quest="_quest";
+ var suffixe_in="_in";
+ var suffixe_msg="_msg";
+
+ console.log('je corrige');
+ function corrige(exercice){
+  var i=0;
+  if (exercice==="ex1")
+   tab=ex1;  
+  else if (exercice==="ex2")
+   tab=ex2;  
+  for(var item of tab){
+   var i_quest = i+1;
+   var id = exercice + suffixe1 + i_quest + suffixe_in;
+   var inputElement = document.getElementById(id);
+   if (inputElement!=null){
+    var inputValue = inputElement.value;
+	//console.log(tab[i]);
+	console.log(inputElement.value);
+	if (inputValue!=null && inputValue===tab[i])
+	 inputElement.style.backgroundColor = '#33FF5B';
+	else{
+	 inputElement.style.backgroundColor = '#FF5233';
+	 id = exercice + suffixe1 + i_quest + suffixe_msg;
+	 console.log(id);
+	 var msgElement = document.getElementById(id);
+	 msgElement.innerText = " -> " + tab[i];
+	 }
+   }
+   //console.log(id);
+   //console.log(inputElement.value);
+   i++;
+  }
+ 
+ }
+ </script>
+</HEAD>
+<BODY>
+<div class="site-introduction">
+ <h1 class="h1-page-title">Leer Frans</h1>
+ <h3 class="h3-page-title">Gratis oefeningen en leertips voor beginners</h3>
+</div>
+<SECTION>
+<DIV>
+<H1>Exercices - Oefeningen</H1>
+<H2>Conjugaison - Vervoeging</H2>
+<p><span class="L1"><strong>Verbes "être" et "avoir" au présent</strong></span> - <span class="L2"><strong>Werkwoorden "être" en "avoir" in de tegenwoordige tijd</strong></span></p>
+<p><span id="ex1_q1_quest">J' <input id="ex1_q1_in"type="text" size='10'/>.</span><span><i>(Avoir)</i></span><span class="qmsg" id="ex1_q1_msg"></span></p>
+<p><span id="ex1_q2_quest">Tu <input id="ex1_q2_in"type="text" size='10'/>.</span><span><i>(Avoir)</i></span><span class="qmsg" id="ex1_q2_msg"></span></p>
+<p><span id="ex1_q3_quest">Il <input id="ex1_q3_in"type="text" size='10'/>.</span><span><i>(Avoir)</i></span><span class="qmsg" id="ex1_q3_msg"></span></p>
+<p><span id="ex1_q4_quest">Nous <input id="ex1_q4_in"type="text" size='10'/>.</span><span><i>(Avoir)</i></span><span class="qmsg" id="ex1_q4_msg"></span></p>
+<p><span id="ex1_q5_quest">Vous <input id="ex1_q5_in"type="text" size='10'/>.</span><span><i>(Avoir)</i></span><span class="qmsg" id="ex1_q5_msg"></span></p>
+<p><span id="ex1_q6_quest">Ils <input id="ex1_q6_in"type="text" size='10'/>.</span><span><i>(Avoir)</i></span><span class="qmsg" id="ex1_q6_msg"></span></p>
+
+<p><span id="ex1_q7_quest">Je <input id="ex1_q7_in"type="text" size='10'/>.</span><span><i>(Être)</i></span><span class="qmsg" id="ex1_q7_msg"></span></p>
+<p><span id="ex1_q8_quest">Tu <input id="ex1_q8_in"type="text" size='10'/>.</span><span><i>(Être)</i></span><span class="qmsg" id="ex1_q8_msg"></span></p>
+<p><span id="ex1_q9_quest">Il <input id="ex1_q9_in"type="text" size='10'/>.</span><span><i>(Être)</i></span><span class="qmsg" id="ex1_q9_msg"></span></p>
+<p><span id="ex1_q10_quest">Nous <input id="ex1_q10_in"type="text" size='10'/>.</span><span><i>(Être)</i></span><span class="qmsg" id="ex1_q10_msg"></span></p>
+<p><span id="ex1_q11_quest">Vous <input id="ex1_q11_in"type="text" size='10'/>.</span><span><i>(Être)</i></span><span class="qmsg" id="ex1_q11_msg"></span></p>
+<p><span id="ex1_q12_quest">Ils <input id="ex1_q12_in"type="text" size='10'/>.</span><span><i>(Être)</i></span><span class="qmsg" id="ex1_q12_msg"></span></p>
+<input type='button' value='CORRIGER - VERBETEREN' onclick="corrige('ex1')"/>
+</DIV>
+<div class="nav">
+<a class="lien-prev-next" href="index.html">< Page d'accueil (Startpagina)<a/><a class="lien-prev-next" href="3.jours-semaine.html"> Suivant (Volgende) ><a/>
+</div>
+</BODY>
+</HTML>
